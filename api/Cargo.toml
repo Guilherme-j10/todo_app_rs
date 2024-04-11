@@ -1,0 +1,13 @@
+[package]
+name = "todo_app_api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.7.5"
+sea-orm = { version = "0.12", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros" ] }
+tokio = { version = "1", features = ["full"] }
+dotenvy = "=0.15.7"
+anyhow = "1.0.82"

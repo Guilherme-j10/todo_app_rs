@@ -1,0 +1,12 @@
+[package]
+name = "todo_app"
+version = "0.1.0"
+authors = ["Guilherme Campos"]
+edition = "2021"
+publish = false
+
+[workspace]
+members = [".", "api"]
+
+[dependencies]
+todo_app_api = { path = "api"}
