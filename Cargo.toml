@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 
 [workspace]
-members = [".", "api", "migration", "entities"]
+members = [".", "api", "migration"]
 
 [dependencies]
 todo_app_api = { path = "api"}
