@@ -66,13 +66,13 @@ async fn list_tasks(State(state): State<AppState>) -> impl IntoResponse {
         .await
         .expect("Erro in list task");
 
-    Json::from(tasks)
+    Json(tasks)
 }
 
 async fn create_task(
     State(state): State<AppState>,
     Json(payload): Json<CreateTask>
-) -> Json<Value> {
+) -> impl IntoResponse {
     let ulid = Ulid::new();
     let now = Local::now().naive_local();
 
@@ -85,5 +85,5 @@ async fn create_task(
     };
 
     task.insert(&state.database_connection).await.unwrap();
-    Json(json!(true))
+    Json(true)
 }
